@@ -35,7 +35,7 @@ TBD.
 
 ## Process
 
-1. Install dependencies
+1. Install dependencies ✅
    - Install PostgreSQL ✅
    - Create new T3 app ✅
    - Install TypeORM ✅
