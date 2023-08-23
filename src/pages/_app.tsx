@@ -1,5 +1,8 @@
 import { type AppType } from "next/app";
 import { api } from "~/utils/api";
+
+import "reflect-metadata";
+
 import "~/styles/globals.css";
 
 const MyApp: AppType = ({ Component, pageProps }) => {

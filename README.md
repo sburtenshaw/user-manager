@@ -38,7 +38,7 @@ TBD.
 1. Install dependencies
    - Install PostgreSQL ✅
    - Create new T3 app ✅
-   - Install TypeORM
+   - Install TypeORM ✅
 2. Configure database
    - Create database
    - Create user table
