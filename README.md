@@ -8,20 +8,30 @@ This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3
 - [Tailwind CSS](https://tailwindcss.com)
 - [tRPC](https://trpc.io)
 
-# Initial Setup
+# Quick Start
 
-TBD.
+## Prerequisites
+
+- Install [Node.js](https://nodejs.org/)
+- Install [Docker](https://docker.com) and [docker-compose](https://docs.docker.com/compose/), or just install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+## Start app
+
+1. run `npm install`
+2. run `docker-compose up -d`
+3. run `npm run dev`
+4. Navigate to http://localhost:3000
 
 # Project Information
 
-## Technology Required
+## Tech Required
 
 - Node.js
 - tRPC
 - Typescript
 - TypeORM
 
-## Technology Used
+## Tech Used
 
 - T3 Stack
   - Next.js (**Node.js**)
@@ -49,9 +59,9 @@ TBD.
 1. Install dependencies ✅
    - Create new T3 app ✅
    - Install TypeORM ✅
-   - Install `docker`
+   - Install `docker` ✅
 2. Configure database
-   - Configure `docker-compose`
+   - Configure `docker-compose` ✅
    - Create database
    - Create user table
 3. Create backend
