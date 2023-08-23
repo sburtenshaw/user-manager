@@ -1,3 +1,13 @@
+# Create T3 App
+
+This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+
+- [Documentation](https://create.t3.gg/)
+- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+- [Next.js](https://nextjs.org)
+- [Tailwind CSS](https://tailwindcss.com)
+- [tRPC](https://trpc.io)
+
 # Initial Setup
 
 TBD.
@@ -13,7 +23,7 @@ TBD.
 
 ## Technology Used
 
-- [T3 Stack](https://create.t3.gg/)
+- T3 Stack
   - Next.js (**Node.js**)
   - **tRPC**
   - **React**
@@ -21,6 +31,7 @@ TBD.
   - Tailwind.css
 - PostgreSQL
 - **TypeORM**
+- Docker
 
 ## Functionality
 
@@ -36,10 +47,11 @@ TBD.
 ## Process
 
 1. Install dependencies ✅
-   - Install PostgreSQL ✅
    - Create new T3 app ✅
    - Install TypeORM ✅
+   - Install `docker`
 2. Configure database
+   - Configure `docker-compose`
    - Create database
    - Create user table
 3. Create backend
@@ -50,14 +62,3 @@ TBD.
    - List all users
    - Add a new user
    - Delete a user
-
-# Create T3 App
-
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-- [Next.js](https://nextjs.org)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
