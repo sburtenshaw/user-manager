@@ -1,6 +1,8 @@
+import "reflect-metadata";
+
 import { DataSource } from "typeorm";
 
-import "reflect-metadata";
+import User from "~/server/db/entities/User";
 
 const DataSourceInstance = new DataSource({
   type: "postgres",
@@ -11,9 +13,11 @@ const DataSourceInstance = new DataSource({
   database: "user-manager",
   synchronize: true,
   logging: true,
-  entities: [],
+  entities: [User],
   subscribers: [],
-  migrations: [],
+  migrations: ["./migrations/*{.ts,.js}"],
 });
 
-export { DataSourceInstance };
+await DataSourceInstance.initialize();
+
+export default DataSourceInstance;

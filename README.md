@@ -60,10 +60,10 @@ This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3
    - Create new T3 app ✅
    - Install TypeORM ✅
    - Install `docker` ✅
-2. Configure database
+2. Configure database ✅
    - Configure `docker-compose` ✅
    - Create database ✅
-   - Create user table
+   - Create user table ✅
 3. Create backend
    - `GET`: Get all users
    - `POST`: Create a new user
