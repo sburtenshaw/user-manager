@@ -64,11 +64,14 @@ This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3
    - Configure `docker-compose` ✅
    - Create database ✅
    - Create user table ✅
-3. Create backend
-   - `GET`: Get all users
-   - `POST`: Create a new user
-   - `DELETE`: Delete a user
+3. Create backend ✅
+   - Get a user ✅
+   - Get all users ✅
+   - Create a user ✅
+   - Update a user ✅
+   - Delete a user ✅
 4. Create frontend
    - List all users
    - Add a new user
    - Delete a user
+   - Update a user _(optional)_

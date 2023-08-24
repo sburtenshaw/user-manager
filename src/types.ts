@@ -1,3 +1,5 @@
+import { z } from "zod";
+
 enum FavouriteFoods {
   Mexican = "Mexican",
   Italian = "Italian",
@@ -10,15 +12,12 @@ enum FavouriteFoods {
   Japanese = "Japanese",
 }
 
-interface ClientUser {
-  firstName: string;
-  lastName: string;
-  favouriteFood?: FavouriteFoods;
-}
+const User = z.object({
+  firstName: z.string(),
+  lastName: z.string(),
+  favouriteFood: z.nativeEnum(FavouriteFoods).optional(),
+});
+type UserType = z.infer<typeof User>;
 
-interface ServerUser extends ClientUser {
-  id: string;
-}
-
-export type { ClientUser, ServerUser };
-export { FavouriteFoods };
+export type { UserType };
+export { FavouriteFoods, User };
