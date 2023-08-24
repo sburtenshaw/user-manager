@@ -3,6 +3,7 @@ services:
   postgres:
     image: postgres
     environment:
+      POSTGRES_DB: user-manager
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
