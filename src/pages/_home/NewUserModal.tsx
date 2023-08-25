@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button, Modal, Label, TextInput, Select } from "flowbite-react";
 
 import { FavouriteFoods, User, type UserType } from "~/types";
+
 import { api } from "~/utils/api";
 
 interface TouchedType {
@@ -59,7 +60,7 @@ function NewUserModal() {
     if (!validation.success) {
       const errors = validation.error.formErrors.fieldErrors;
       Object.keys(errors).forEach((field) => {
-        if (newTouched[field as keyof TouchedType] === false) {
+        if (!newTouched[field as keyof TouchedType]) {
           delete errors[field as keyof typeof errors];
         }
       });
@@ -136,7 +137,6 @@ function NewUserModal() {
                   onBlur={() => {
                     handleBlur("firstName");
                   }}
-                  required
                 />
               </div>
               <div className="flex-1">
@@ -160,7 +160,6 @@ function NewUserModal() {
                   onBlur={() => {
                     handleBlur("lastName");
                   }}
-                  required
                 />
               </div>
             </div>
@@ -185,7 +184,6 @@ function NewUserModal() {
                 onBlur={() => {
                   handleBlur("emailAddress");
                 }}
-                required
               />
             </div>
             <div>

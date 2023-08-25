@@ -7,10 +7,10 @@ import { user as userMethods } from "~/server/db/methods";
 
 import { User, type UserWithIdType } from "~/types";
 
-export const userRouter = createTRPCRouter({
+const userRouter = createTRPCRouter({
   getUser: publicProcedure
     .input(z.object({ id: z.string() }))
-    .query(async ({ input }): Promise<UserWithIdType | null> => {
+    .query(async ({ input }): Promise<UserWithIdType | void> => {
       const user: UserWithIdType | null = await userMethods.getUser(input.id);
       if (!user) {
         throw new TRPCError({
@@ -26,7 +26,7 @@ export const userRouter = createTRPCRouter({
   }),
   createUser: publicProcedure
     .input(z.object({ user: User }))
-    .mutation(async ({ input }) => {
+    .mutation(async ({ input }): Promise<UserWithIdType> => {
       const createdUser: UserWithIdType = await userMethods.createUser(
         input.user
       );
@@ -34,7 +34,7 @@ export const userRouter = createTRPCRouter({
     }),
   updateUser: publicProcedure
     .input(z.object({ id: z.string(), data: User.partial() }))
-    .mutation(async ({ input }) => {
+    .mutation(async ({ input }): Promise<UserWithIdType | void> => {
       const updatedUser: UserWithIdType | null = await userMethods.updateUser(
         input.id,
         input.data
@@ -49,7 +49,7 @@ export const userRouter = createTRPCRouter({
     }),
   deleteUser: publicProcedure
     .input(z.object({ id: z.string() }))
-    .mutation(async ({ input }) => {
+    .mutation(async ({ input }): Promise<boolean | void> => {
       const deleteSuccessful: boolean = await userMethods.deleteUser(input.id);
       if (!deleteSuccessful) {
         throw new TRPCError({
@@ -60,3 +60,5 @@ export const userRouter = createTRPCRouter({
       return true;
     }),
 });
+
+export { userRouter };
