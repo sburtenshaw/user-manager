@@ -22,6 +22,28 @@ This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3
 3. run `npm run dev`
 4. Navigate to http://localhost:3000
 
+# Notes
+
+## Process
+
+I started by implementing the backend and then moved on to the frontend. I did this because the requirements were clear so I could fully implement the backend before moving on.
+
+## TypeORM
+
+TypeORM did not integrate smoothly with Next.js and the T3 stack. It ended up being quite a pain trying to get them to play well together, primarily involving trying to initialize the DataSource on server entry (seems trivial, I know).
+
+I ended up discovering an experimental feature of Next.js called `instrumentation`. This allows you to import modules when the server starts up, so I could initialize the DataSource prior to the rest of the application running.
+
+## Component Library
+
+I used a component library called Flowbite to help speed up the frontend development process.
+
+Flowbite is built on top of tailwindcss, so implementation on top of the T3 stack was straight forward.
+
+## Automated Testing
+
+I did not focus on automated testing during this assignment. Given it wasn't in the requirements, I decided to focus my time on the quality of my frontend and backend implementation. If I had another day or so to work on this, I would have focused on implementing automated testing as well.
+
 # Project Information
 
 ## Tech Required
