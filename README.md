@@ -42,15 +42,16 @@ This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3
 - PostgreSQL
 - **TypeORM**
 - Docker
+- [Flowbite](https://www.flowbite-react.com/)
 
 ## Functionality
 
 - User management application
   - List users
-    - First name (required)
-    - Last name (required)
-    - Email address (required)
-    - Favourite food (not required)
+    - First name
+    - Last name
+    - Email address
+    - Favourite food
   - Add users
   - Delete users
 
