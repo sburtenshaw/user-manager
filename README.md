@@ -44,6 +44,14 @@ Flowbite is built on top of tailwindcss, so implementation on top of the T3 stac
 
 I did not focus on automated testing during this assignment. Given it wasn't in the requirements, I decided to focus my time on the quality of my frontend and backend implementation. If I had another day or so to work on this, I would have focused on implementing automated testing as well.
 
+## Responsiveness
+
+I did not focus on making the application mobile friendly. Again, given it was a requirement, I decided to prioritise my time on the desktop implementation of the app. There are a couple of approaches that could be taken to make the app mobile friendly. My preferred approach would be to implement the changes in the "Alternative Design" section below. Alternatively I could scroll the table horizontally if the contents of the table didn't fit inside the screen size. This would be the easier approach.
+
+## Alternative Design
+
+I used a table to list the users in the application UI. I did this so I could save time implementing this feature. My preferred approach would be to build a more custom UI which utilised contrast and hierarchy to prioritise information and save space. This would also allow me to more easily improve the responsiveness of the UI.
+
 # Project Information
 
 ## Tech Required
