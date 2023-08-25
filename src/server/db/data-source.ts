@@ -15,7 +15,7 @@ const DataSourceInstance = new DataSource({
   logging: true,
   entities: [User],
   subscribers: [],
-  migrations: ["./migrations/*{.ts,.js}"],
+  migrations: ["./migrations/*.{ts,js}"],
 });
 
 await DataSourceInstance.initialize();

@@ -13,6 +13,9 @@ class User {
   @Column()
   lastName: string;
 
+  @Column()
+  emailAddress: string;
+
   @Column({
     type: "enum",
     enum: FavouriteFoods,

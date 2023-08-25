@@ -26,6 +26,9 @@ const user = {
       if (data.lastName) {
         user.lastName = data.lastName;
       }
+      if (data.emailAddress) {
+        user.emailAddress = data.emailAddress;
+      }
       if (data.favouriteFood) {
         user.favouriteFood = data.favouriteFood;
       }
