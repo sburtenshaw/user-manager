@@ -101,7 +101,13 @@ function NewUserModal() {
   return (
     <>
       <Button onClick={handleOpenModal}>New User</Button>
-      <Modal dismissible popup show={modalOpen} onClose={handleCloseModal}>
+      <Modal
+        size="md"
+        dismissible
+        popup
+        show={modalOpen}
+        onClose={handleCloseModal}
+      >
         <Modal.Header />
         <Modal.Body>
           <div className="space-y-4">
