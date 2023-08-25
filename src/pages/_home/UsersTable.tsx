@@ -1,3 +1,5 @@
+"use client";
+
 import { type UserWithIdType } from "~/types";
 
 import { Table } from "flowbite-react";

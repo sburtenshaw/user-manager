@@ -3,10 +3,10 @@ import userRepository from "~/server/db/repositories/user";
 import { type UserType, type UserWithIdType } from "~/types";
 
 const user = {
-  getUser: async (id: string): Promise<UserWithIdType | null> => {
+  getUser: (id: string): Promise<UserWithIdType | null> => {
     return userRepository.findOneBy({ id });
   },
-  getAllUsers: async (): Promise<UserWithIdType[]> => {
+  getAllUsers: (): Promise<UserWithIdType[]> => {
     return userRepository.find();
   },
   createUser: async (user: UserType): Promise<UserWithIdType> => {

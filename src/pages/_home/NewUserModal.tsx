@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 import { Button, Modal, Label, TextInput, Select } from "flowbite-react";
@@ -60,6 +62,7 @@ function NewUserModal() {
     if (!validation.success) {
       const errors = validation.error.formErrors.fieldErrors;
       Object.keys(errors).forEach((field) => {
+        /* delete errors for fields that haven't been touched */
         if (!newTouched[field as keyof TouchedType]) {
           delete errors[field as keyof typeof errors];
         }
@@ -206,7 +209,6 @@ function NewUserModal() {
                   handleBlur("favouriteFood");
                 }}
               >
-                <option></option>
                 {Object.values(FavouriteFoods).map((favouriteFood) => (
                   <option key={favouriteFood}>{favouriteFood}</option>
                 ))}

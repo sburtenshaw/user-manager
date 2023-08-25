@@ -1,3 +1,5 @@
+"use client";
+
 import { Alert, Spinner, Navbar } from "flowbite-react";
 import { HiInformationCircle } from "react-icons/hi";
 
@@ -40,7 +42,8 @@ function Home() {
       </Navbar>
       <div className="mx-auto max-w-screen-lg px-4 py-4">
         <div className="grid gap-4">
-          <div className="flex flex-col items-end">
+          <div className="flex flex-row items-end justify-between">
+            <h1 className="text-2xl dark:text-slate-200">Users</h1>
             <NewUserModal />
           </div>
           <div>{renderUsers()}</div>
