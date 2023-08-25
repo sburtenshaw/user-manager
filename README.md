@@ -24,15 +24,11 @@ This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3
 
 # Notes
 
-## Process
-
-I started by implementing the backend and then moved on to the frontend. I did this because the requirements were clear so I could fully implement the backend before moving on.
-
 ## TypeORM
 
 TypeORM did not integrate smoothly with Next.js and the T3 stack. It ended up being quite a pain trying to get them to play well together, primarily involving trying to initialize the DataSource on server entry (seems trivial, I know).
 
-I ended up discovering an experimental feature of Next.js called `instrumentation`. This allows you to import modules when the server starts up, so I could initialize the DataSource prior to the rest of the application running.
+I ended up discovering an experimental feature of Next.js called `instrumentation`. This allows you to import modules when the server starts up, so I could initialize the DataSource prior to the rest of the application running. Until this there didn't seem to be a straight forward way to achieve this.
 
 ## Component Library
 
@@ -46,11 +42,21 @@ I did not focus on automated testing during this assignment. Given it wasn't in 
 
 ## Responsiveness
 
-I did not focus on making the application mobile friendly. Again, given it was a requirement, I decided to prioritise my time on the desktop implementation of the app. There are a couple of approaches that could be taken to make the app mobile friendly. My preferred approach would be to implement the changes in the "Alternative Design" section below. Alternatively I could scroll the table horizontally if the contents of the table didn't fit inside the screen size. This would be the easier approach.
+I did not focus on making the application mobile friendly. Again, given it wasn't a requirement, I decided to prioritise my time on the desktop implementation of the app.
+
+There are a couple of approaches that could be taken to make the app mobile friendly. My preferred approach would be to implement the changes in the "Alternative Design" section below.
+
+Alternatively I could scroll the table horizontally if the contents of the table doesn't fit inside the screen size. This would be the easier approach.
 
 ## Alternative Design
 
-I used a table to list the users in the application UI. I did this so I could save time implementing this feature. My preferred approach would be to build a more custom UI which utilised contrast and hierarchy to prioritise information and save space. This would also allow me to more easily improve the responsiveness of the UI.
+I used a table to list the users in the application UIs so I could save time implementing the feature. My preferred approach would be to build a custom UI which utilised contrast and text hierarchy to prioritise information and save space. This would also result in a more mobile friendly layout.
+
+## Update User
+
+I planned to also add the ability to update a user as well but didn't get round to doing that.
+
+My plan was to re-use most of the `NewUserModal` logic to achieve this. The logic that makes the api request and some copy information would be extracted into a parent component and passed down as props. The rest of the code will stay in a shared child component called `UserModal` and used by another parent component called `UpdateUserModal`.
 
 # Project Information
 
@@ -105,3 +111,4 @@ I used a table to list the users in the application UI. I did this so I could sa
    - List all users ✅
    - Add a new user ✅
    - Delete a user ✅
+   - Update a user ❌
