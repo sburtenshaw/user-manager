@@ -5,13 +5,6 @@ import { Button, Modal, Label, TextInput, Select } from "flowbite-react";
 import { FavouriteFoods, User, type UserType } from "~/types";
 import { api } from "~/utils/api";
 
-const DEFAULT_USER_STATE: UserType = {
-  firstName: "",
-  lastName: "",
-  emailAddress: "",
-  favouriteFood: FavouriteFoods.Mexican,
-};
-
 interface TouchedType {
   firstName: boolean;
   lastName: boolean;
@@ -26,18 +19,29 @@ interface ErrorsType {
   favouriteFood?: string[];
 }
 
+const DEFAULT_USER_STATE: UserType = {
+  firstName: "",
+  lastName: "",
+  emailAddress: "",
+  favouriteFood: FavouriteFoods.Mexican,
+};
+
+const DEFAULT_TOUCHED_STATE: TouchedType = {
+  firstName: false,
+  lastName: false,
+  emailAddress: false,
+  favouriteFood: false,
+};
+
+const DEFAULT_ERRORS_STATE: ErrorsType = {};
+
 function NewUserModal() {
   const apiContext = api.useContext();
 
   const [modalOpen, setModalOpen] = useState(false);
   const [user, setUser] = useState(DEFAULT_USER_STATE);
-  const [touched, setTouched] = useState<TouchedType>({
-    firstName: false,
-    lastName: false,
-    emailAddress: false,
-    favouriteFood: false,
-  });
-  const [errors, setErrors] = useState<ErrorsType>({});
+  const [touched, setTouched] = useState(DEFAULT_TOUCHED_STATE);
+  const [errors, setErrors] = useState(DEFAULT_ERRORS_STATE);
 
   const handleOpenModal = (): void => {
     setModalOpen(true);
@@ -45,6 +49,9 @@ function NewUserModal() {
 
   const handleCloseModal = (): void => {
     setModalOpen(false);
+    setUser(DEFAULT_USER_STATE);
+    setTouched(DEFAULT_TOUCHED_STATE);
+    setErrors(DEFAULT_ERRORS_STATE);
   };
 
   const handleValidate = (newUser: UserType, newTouched: TouchedType): void => {
@@ -84,7 +91,6 @@ function NewUserModal() {
     onSuccess: async () => {
       await apiContext.user.invalidate();
       handleCloseModal();
-      setUser(DEFAULT_USER_STATE);
     },
   });
 
