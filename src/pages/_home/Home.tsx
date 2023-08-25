@@ -6,7 +6,7 @@ import UsersTable from "./UsersTable";
 
 import { api } from "~/utils/api";
 
-export default function Home() {
+function Home() {
   const users = api.user.getAllUsers.useQuery();
 
   const renderUsers = () => {
@@ -49,3 +49,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default Home;

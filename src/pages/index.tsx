@@ -4,7 +4,7 @@ import { Flowbite } from "flowbite-react";
 
 import Home from "./_home";
 
-export default function Index() {
+function Index() {
   return (
     <>
       <Head>
@@ -18,3 +18,5 @@ export default function Index() {
     </>
   );
 }
+
+export default Index;
