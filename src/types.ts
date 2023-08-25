@@ -14,9 +14,19 @@ enum FavouriteFoods {
 
 const User = z.object({
   id: z.string().uuid().optional(),
-  firstName: z.string().min(1).trim(),
-  lastName: z.string().min(1).trim(),
-  emailAddress: z.string().email().trim(),
+  firstName: z
+    .string()
+    .min(1, {
+      message: "First name is required",
+    })
+    .trim(),
+  lastName: z
+    .string()
+    .min(1, {
+      message: "Last name is required",
+    })
+    .trim(),
+  emailAddress: z.string().email({ message: "Invalid email address" }).trim(),
   favouriteFood: z.nativeEnum(FavouriteFoods),
 });
 type UserType = z.infer<typeof User>;
