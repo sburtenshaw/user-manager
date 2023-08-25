@@ -120,7 +120,7 @@ function NewUserModal() {
                   <Label
                     color={errors.firstName ? "failure" : "default"}
                     htmlFor="firstName"
-                    value="Your first name"
+                    value="First Name"
                   />
                 </div>
                 <TextInput
@@ -144,7 +144,7 @@ function NewUserModal() {
                   <Label
                     color={errors.lastName ? "failure" : "default"}
                     htmlFor="lastName"
-                    value="Your last name"
+                    value="Last Name"
                   />
                 </div>
                 <TextInput
@@ -169,7 +169,7 @@ function NewUserModal() {
                 <Label
                   color={errors.emailAddress ? "failure" : "default"}
                   htmlFor="emailAddress"
-                  value="Your email address"
+                  value="Email Address"
                 />
               </div>
               <TextInput
@@ -193,7 +193,7 @@ function NewUserModal() {
                 <Label
                   color={errors.favouriteFood ? "failure" : "default"}
                   htmlFor="favouriteFood"
-                  value="Your favourite food"
+                  value="Favourite Food"
                 />
               </div>
               <Select
