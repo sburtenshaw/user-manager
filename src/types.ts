@@ -13,12 +13,17 @@ enum FavouriteFoods {
 }
 
 const User = z.object({
-  firstName: z.string(),
-  lastName: z.string(),
-  emailAddress: z.string(),
-  favouriteFood: z.nativeEnum(FavouriteFoods).optional(),
+  id: z.string().uuid().optional(),
+  firstName: z.string().min(1).trim(),
+  lastName: z.string().min(1).trim(),
+  emailAddress: z.string().email().trim(),
+  favouriteFood: z.nativeEnum(FavouriteFoods),
 });
 type UserType = z.infer<typeof User>;
 
-export type { UserType };
+interface UserWithIdType extends UserType {
+  id: string;
+}
+
+export type { UserType, UserWithIdType };
 export { FavouriteFoods, User };

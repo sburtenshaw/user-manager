@@ -1,24 +1,24 @@
 import userRepository from "~/server/db/repositories/user";
 
-import type { UserType } from "~/types";
+import { type UserType, type UserWithIdType } from "~/types";
 
 const user = {
-  getUser: async (id: string): Promise<UserType | null> => {
+  getUser: async (id: string): Promise<UserWithIdType | null> => {
     return userRepository.findOneBy({ id });
   },
-  getAllUsers: async (): Promise<UserType[]> => {
+  getAllUsers: async (): Promise<UserWithIdType[]> => {
     return userRepository.find();
   },
-  createUser: async (user: UserType): Promise<UserType> => {
-    const createdUser: UserType = userRepository.create(user);
+  createUser: async (user: UserType): Promise<UserWithIdType> => {
+    const createdUser: UserWithIdType = userRepository.create(user);
     await userRepository.save(createdUser);
     return createdUser;
   },
   updateUser: async (
     id: string,
     data: Partial<UserType>
-  ): Promise<UserType | null> => {
-    const user: UserType | null = await userRepository.findOneBy({ id });
+  ): Promise<UserWithIdType | null> => {
+    const user: UserWithIdType | null = await userRepository.findOneBy({ id });
     if (user) {
       if (data.firstName) {
         user.firstName = data.firstName;
@@ -38,7 +38,7 @@ const user = {
     return null;
   },
   deleteUser: async (id: string): Promise<boolean> => {
-    const user: UserType | null = await userRepository.findOneBy({ id });
+    const user: UserWithIdType | null = await userRepository.findOneBy({ id });
     if (user) {
       await userRepository.delete(user);
       return true;

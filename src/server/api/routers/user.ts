@@ -5,14 +5,13 @@ import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 import { user as userMethods } from "~/server/db/methods";
 
-import type { UserType } from "~/types";
-import { User } from "~/types";
+import { User, type UserWithIdType } from "~/types";
 
 export const userRouter = createTRPCRouter({
   getUser: publicProcedure
     .input(z.object({ id: z.string() }))
-    .query(async ({ input }): Promise<UserType | null> => {
-      const user: UserType | null = await userMethods.getUser(input.id);
+    .query(async ({ input }): Promise<UserWithIdType | null> => {
+      const user: UserWithIdType | null = await userMethods.getUser(input.id);
       if (!user) {
         throw new TRPCError({
           code: "NOT_FOUND",
@@ -21,20 +20,22 @@ export const userRouter = createTRPCRouter({
       }
       return user;
     }),
-  getAllUsers: publicProcedure.query(async (): Promise<UserType[]> => {
-    const users: UserType[] = await userMethods.getAllUsers();
+  getAllUsers: publicProcedure.query(async (): Promise<UserWithIdType[]> => {
+    const users: UserWithIdType[] = await userMethods.getAllUsers();
     return users;
   }),
   createUser: publicProcedure
     .input(z.object({ user: User }))
     .mutation(async ({ input }) => {
-      const createdUser: UserType = await userMethods.createUser(input.user);
+      const createdUser: UserWithIdType = await userMethods.createUser(
+        input.user
+      );
       return createdUser;
     }),
   updateUser: publicProcedure
     .input(z.object({ id: z.string(), data: User.partial() }))
     .mutation(async ({ input }) => {
-      const updatedUser: UserType | null = await userMethods.updateUser(
+      const updatedUser: UserWithIdType | null = await userMethods.updateUser(
         input.id,
         input.data
       );
