@@ -62,7 +62,13 @@ function ConfirmDeleteUserModal({ user }: ConfirmDeleteUserModalProps) {
           className="h-5 w-5 cursor-pointer"
         />
       </Tooltip>
-      <Modal show={modalOpen} size="md" popup onClose={handleCloseModal}>
+      <Modal
+        show={modalOpen}
+        size="md"
+        dismissible
+        popup
+        onClose={handleCloseModal}
+      >
         <Modal.Header />
         <Modal.Body>
           <div className="text-center">
