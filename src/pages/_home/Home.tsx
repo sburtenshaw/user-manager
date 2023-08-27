@@ -3,7 +3,7 @@
 import { Alert, Spinner, Navbar } from "flowbite-react";
 import { HiInformationCircle } from "react-icons/hi";
 
-import NewUserModal from "./NewUserModal";
+import AddUserModal from "./AddUserModal";
 import UsersTable from "./UsersTable";
 
 import { api } from "~/utils/api";
@@ -44,7 +44,7 @@ function Home() {
         <div className="grid gap-4">
           <div className="flex flex-row items-end justify-between">
             <h1 className="text-2xl dark:text-slate-200">Users</h1>
-            <NewUserModal />
+            <AddUserModal />
           </div>
           <div>{renderUsers()}</div>
         </div>

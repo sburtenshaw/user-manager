@@ -56,7 +56,7 @@ I used a table to list the users in the application UIs so I could save time imp
 
 I planned to also add the ability to update a user as well but didn't get round to doing that.
 
-My plan was to re-use most of the `NewUserModal` logic to achieve this. The logic that makes the api request and some copy information would be extracted into a parent component and passed down as props. The rest of the code will stay in a shared child component called `UserModal` and used by another parent component called `UpdateUserModal`.
+My plan was to re-use most of the `AddUserModal` logic to achieve this. The logic that makes the api request and some copy information would be extracted into a parent component and passed down as props. The rest of the code will stay in a shared child component called `UserModal` and used by another parent component called `UpdateUserModal`.
 
 # Project Information
 

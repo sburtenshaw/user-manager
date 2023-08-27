@@ -38,7 +38,7 @@ const DEFAULT_TOUCHED_STATE: TouchedType = {
 
 const DEFAULT_ERRORS_STATE: ErrorsType = {};
 
-function NewUserModal() {
+function AddUserModal() {
   const apiContext = api.useContext();
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -104,7 +104,7 @@ function NewUserModal() {
 
   return (
     <>
-      <Button onClick={handleOpenModal}>New User</Button>
+      <Button onClick={handleOpenModal}>Add User</Button>
       <Modal
         size="md"
         dismissible
@@ -232,4 +232,4 @@ function NewUserModal() {
   );
 }
 
-export default NewUserModal;
+export default AddUserModal;
